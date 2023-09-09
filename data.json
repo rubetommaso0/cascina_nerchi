@@ -3,7 +3,8 @@
     "timetable": {
       "mattina": ["9", "10"],
       "pomeriggio": ["16", "18"],
-      "giorniChiusura": ["Lunedì"]
+      "giorniChiusura": ["Lunedì"],
+      "chiusuraStagionale": true
     },
     "imageURLs": {
       
