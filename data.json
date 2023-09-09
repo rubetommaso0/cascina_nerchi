@@ -1,0 +1,15 @@
+{
+  "data": {
+    "timetable": {
+      "aperturaMattina": "9",
+      "chiusuraMattina": "12",
+      "aperturaPomeriggio": "16",
+      "chiusuraPomeriggio": "18",
+      "giorniChiusura": [
+        "Lunedì",
+        "Test"
+      ]
+    },
+    "imageURLs": {}
+  }
+}
