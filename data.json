@@ -1,9 +1,9 @@
 {
   "data": {
     "timetable": {
-      "mattina": ["9", "12"],
+      "mattina": ["9", "10"],
       "pomeriggio": ["16", "18"],
-      "giorniChiusura": ["Lunedì","Giovedì"]
+      "giorniChiusura": ["Lunedì"]
     },
     "imageURLs": {
       
