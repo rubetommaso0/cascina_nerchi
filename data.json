@@ -3,11 +3,10 @@
     "timetable": {
       "mattina": ["9", "12"],
       "pomeriggio": ["16", "18"],
-      "giorniChiusura": [
-        "Lunedì",
-        "Test"
-      ]
+      "giorniChiusura": ["Lunedì","Giovedì"]
     },
-    "imageURLs": {}
+    "imageURLs": {
+      
+    }
   }
 }
