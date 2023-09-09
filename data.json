@@ -1,10 +1,8 @@
 {
   "data": {
     "timetable": {
-      "aperturaMattina": "9",
-      "chiusuraMattina": "12",
-      "aperturaPomeriggio": "16",
-      "chiusuraPomeriggio": "18",
+      "mattina": ["9", "12"],
+      "pomeriggio": ["16", "18"],
       "giorniChiusura": [
         "Lunedì",
         "Test"
