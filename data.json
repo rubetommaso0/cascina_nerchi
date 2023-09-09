@@ -4,7 +4,7 @@
       "mattina": [],
       "pomeriggio": ["16", "18"],
       "giorniChiusura": ["Lunedì"],
-      "chiusuraStagionale": true
+      "chiusuraStagionale": false
     },
     "imageURLs": {
       
