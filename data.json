@@ -1,7 +1,7 @@
 {
   "data": {
     "timetable": {
-      "mattina": ["9", "10"],
+      "mattina": [],
       "pomeriggio": ["16", "18"],
       "giorniChiusura": ["Lunedì"],
       "chiusuraStagionale": true
