@@ -22,12 +22,6 @@
             padding-bottom: 15px;
         }
 
-        .large-screen-separator {
-            max-width: 20%;
-            height: auto;
-            align-items: center;
-        }
-
         .horizontal-stack {
             display: flex;
             justify-content: space-evenly;
@@ -80,9 +74,28 @@
         }
 
         img {
-            max-width: 75%;
             height: auto;
             margin-bottom: 20px;
+        }
+
+        body.small-screen-font img {
+            max-width: 85%;
+        }
+
+        body.large-screen-font img {
+            max-width: 500px;
+        }
+
+        body.large-screen-font .separator {
+            max-width: 20%;
+            height: auto;
+            align-items: center;
+        }
+
+        body.small-screen-font .separator {
+            max-width: 20%;
+            height: auto;
+            align-items: center;
         }
 
         h1 {
@@ -102,7 +115,7 @@
 
 </head>
 
-<body class="large-screen-font">
+<body class="large-screen-font" id="body">
 
     <div class="vertical-stack">
 
@@ -111,7 +124,7 @@
         <div id="vertical_mobile" class="horizontal-stack">
             <div class="vertical-stack large-screen" id="mobile_fullScreen_desc">
                 <h1>Il Montebore e le terre del Giarolo</h1>
-                <img class="large-screen-separator" src="separator.jpg" style="margin-bottom: 45px;">
+                <img class="separator" src="separator.jpg" style="margin-bottom: 45px;">
                 <p>
                     Situata nel cuore del Sud-Ovest Piemontese, la città di riferimento per questo territorio è Tortona,
                     snodo autostradale cruciale tra Milano,
@@ -121,11 +134,12 @@
                     Avventurandosi tra le colline poco distanti, i
                     Colli Tortonesi, si possono scoprire i suoi tesori:
                     <br>i vini, come il Timorasso, stanno
-                    conquistando fama internazionale, ma anche i prodotti locali, 
+                    conquistando fama internazionale, ma anche i prodotti locali,
                     come le pesche di Volpedo, sono apprezzate in tutto il Nord Italia.
                     <br>
                     Questo territorio collinare offre una grande varietà di esperienze che includono cene
-                    tradizionali in agriturismi, visite a cantine e passeggiate panoramiche, ma soprattutto l'opportunità di
+                    tradizionali in agriturismi, visite a cantine e passeggiate panoramiche, ma soprattutto
+                    l'opportunità di
                     gustare una cucina che unisce sapientemente influenze piemontesi, liguri, lombarde ed emiliane.
                 </p>
                 <img src="territorio/colli-tortonesi.jpeg" class="shadow">
@@ -134,7 +148,8 @@
                     monte Giarolo, sono un connubio di paesaggi mozzafiato e storia.
                     <br>
                     Qui, tra i boschi verdeggianti e lungo l'antica via del sale, sorgono i pittoreschi borghi medievali
-                    di Garbagna, Vigoponzo e Montebore, conosciuti per le eccellenze gastronomiche come salumi, tartufi e l'omonimo
+                    di Garbagna, Vigoponzo e Montebore, conosciuti per le eccellenze gastronomiche come salumi, tartufi
+                    e l'omonimo
                     formaggio.
                 </p>
                 <img src="territorio/montebore.jpg" class="shadow">
@@ -178,14 +193,28 @@
                     si fondono in un'esperienza indimenticabile.
                     <br>
                     <br>
-                    Veniteci a trovare! 
+                    Veniteci a trovare!
                 </p>
             </div>
         </div>
 
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
+        const body = document.getElementById('body');
+
+        function resize() {
+            if (isMobileDevice || window.innerWidth < 600) {
+                body.className = 'small-screen-font'
+            } else {
+                body.className = 'large-screen-font'
+            }
+        }
+
+        resize()
+        window.addEventListener('resize', resize);
+    </script>
 </body>
 
 </html>
