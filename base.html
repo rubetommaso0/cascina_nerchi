@@ -383,11 +383,12 @@
             <div id="experiences" class="shadow large-screen">
                 <div class="vertical-stack">
                     <h1 style="margin: 15px;">Le nostre iniziative</h1>
-                    <div id="iniziative">
-                        <h2 id="titoloIniziativa">Title</h2>
+                    <div id="iniziative" style="transition: opacity 1s;">
+                        <h2 id="titoloIniziativa"></h2>
                         <img id="immagineIniziativa" src="" style="max-width: 45%;" class="shadow">
-                        <p id="descrizioneIniziativa">Description</p>
+                        <p id="descrizioneIniziativa"></p>
                     </div>
+                    <a href="https://rubetommaso0.github.io/cascina_nerchi/territorio.html">Vedi tutto</a>
                 </div>
             </div>
         </div>
@@ -587,19 +588,23 @@
         const titleElement = document.getElementById("titoloIniziativa");
         const imageElement = document.getElementById("immagineIniziativa");
         const descriptionElement = document.getElementById("descrizioneIniziativa");
+        const container = document.getElementById('iniziative');
 
         let esperienze;
         let currentExp = 0;
 
         function updateContent(index) {
             const iniziativa = esperienze[index];
+            container.style.opacity = 0;
 
-            imageElement.onload = function() {
-                titleElement.textContent = iniziativa.titolo;
-                descriptionElement.textContent = iniziativa.descrizione;
-            }
-            imageElement.src = iniziativa.immagine;
-
+            setTimeout(function () {
+                imageElement.onload = function () {
+                    titleElement.textContent = iniziativa.titolo;
+                    descriptionElement.textContent = iniziativa.descrizione;
+                    container.style.opacity = 1;
+                }
+                imageElement.src = iniziativa.immagine;
+            }, 1000);
             currentExp = (index + 1) % esperienze.length;
         }
 
@@ -618,7 +623,7 @@
         }
 
         getExperiences();
-        setInterval(() => updateContent(currentExp), 7000);
+        setInterval(() => updateContent(currentExp), 8000);
 
         // --- Carousel fonctionality 
         let action;
