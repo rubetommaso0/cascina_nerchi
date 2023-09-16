@@ -592,11 +592,13 @@
         let currentExp = 0;
 
         function updateContent(index) {
-            const iniziative = esperienze[index];
+            const iniziativa = esperienze[index];
 
-            titleElement.textContent = iniziative.titolo;
-            imageElement.src = iniziative.immagine;
-            descriptionElement.textContent = iniziative.descrizione;
+            imageElement.onload = function() {
+                titleElement.textContent = iniziativa.titolo;
+                descriptionElement.textContent = iniziativa.descrizione;
+            }
+            imageElement.src = iniziativa.immagine;
 
             currentExp = (index + 1) % esperienze.length;
         }
