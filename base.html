@@ -608,6 +608,7 @@
 
         let esperienze;
         let currentExp = 0;
+        let delay = 0;
 
         function updateContent(index) {
             const iniziativa = esperienze[index];
@@ -620,8 +621,10 @@
                     container.style.opacity = 1;
                 }
                 imageElement.src = iniziativa.immagine;
-            }, 1000);
-            currentExp = (index + 1) % esperienze.length;
+                currentExp = (index + 1) % esperienze.length;
+            }, delay);
+
+            delay = 1000;
         }
 
         async function getExperiences() {
