@@ -48,6 +48,22 @@
         }
 
         body.small-screen-font p {
+            font-size: 25px;
+        }
+
+        h6 {
+            margin: 0;
+            justify-content: center;
+            color: rgba(0, 0, 0, 1);
+            font-family: 'Amatic SC', sans-serif;
+            font-weight: 400;
+        }
+
+        body.large-screen-font h6 {
+            font-size: 30px;
+        }
+
+        body.small-screen-font h6 {
             font-size: 20px;
         }
 
@@ -72,11 +88,11 @@
         }
 
         body.large-screen-font h2 {
-            font-size: 35px;
+            font-size: 40px;
         }
 
         body.small-screen-font h2 {
-            font-size: 25px;
+            font-size: 30px;
         }
 
         /* Utils */
@@ -402,16 +418,16 @@
                     <h1 style="margin: 15px;">I nostri orari</h1>
                     <div class="horizontal-stack" style="justify-content: space-evenly;">
                         <div class="vertical-stack" style="justify-content: space-between;">
-                            <p class="bold">Mattino</p>
-                            <p id="mattino">Dalle 9<br>alle 12</p>
+                            <h6 class="bold">Mattino</h6>
+                            <h6 id="mattino">Dalle 9<br>alle 12</h6>
                         </div>
                         <div class="vertical-stack" style="justify-content: space-between;">
-                            <p class="bold">Pomeriggio</p>
-                            <p id="pomeriggio">Dalle 15<br>alle 18</p>
+                            <h6 class="bold">Pomeriggio</h6>
+                            <h6 id="pomeriggio">Dalle 15<br>alle 18</h6>
                         </div>
-                        <div class="vertical-stack">
-                            <p class="bold">Siamo chiusi</p>
-                            <p id="giorniChiusura">Giovedì<br>Domenica</p>
+                        <div class="vertical-stack" style="justify-content: space-between;">
+                            <h6 class="bold">Siamo chiusi</h6>
+                            <h6 id="giorniChiusura">Giovedì<br>Domenica</h6>
                         </div>
                     </div>
                 </div>
