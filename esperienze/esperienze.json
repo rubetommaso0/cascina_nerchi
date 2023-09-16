@@ -3,22 +3,22 @@
     {
       "titolo": "Gita a cavallo",
       "immagine": "esperienze/cavallo.jpg",
-      "descrizione": "Sella il tuo destriero e partecipa a un'avventura a cavallo attraverso scenari naturali mozzafiato. Esplora sentieri nascosti, fiumi e colline mentre sperimenti una connessione unica tra uomo e animale in movimento."
+      "descrizione": "Sella il tuo destriero e parti per all'avventura attraverso scenari naturali mozzafiato. Esplora sentieri nascosti mentre sperimenti una connessione unica."
     },
     {
       "titolo": "Mungitura a mano",
       "immagine": "esperienze/mungitura.jpg",
-      "descrizione": "Tuffati nell'atmosfera rurale di una fattoria autentica e impara l'arte tradizionale della mungitura a mano. Metti le mani nella paglia, connettiti con gli animali e vivi un'esperienza coinvolgente e gratificante."
+      "descrizione": "Tuffati nell'atmosfera rurale di una fattoria e impara l'arte della mungitura a mano. Connettiti con gli animali vivendo un'esperienza coinvolgente e gratificante."
     },
     {
       "titolo": "Passeggiata botanica",
       "immagine": "esperienze/passeggiata.jpg",
-      "descrizione": "Avventurati in un percorso mozzafiato tra i monti, guidato da un botanico. Scopri la ricca diversità di piante, fiori e la flora unica di questo ecosistema appenninico, mentre ammiri panorami spettacolari."
+      "descrizione": "Avventurati in un percorso naturale tra i monti guidato da un botanico. Scopri la ricca diversità di piante e fiori di questo ecosistema appenninico."
     },
     {
       "titolo": "A caccia di tartufi",
       "immagine": "esperienze/tartufo.jpg",
-      "descrizione": "Esplora le suggestivi boschi in cerca del tesoro sotterraneo della natura. Con l'aiuto di un esperto tartufaio e il suo fedele cane, immergiti in un'avventura sensoriale per scoprire e raccogliere prelibati tartufi."
+      "descrizione": "Esplora i boschi in cerca del tesoro sotterraneo della natura. Con l'aiuto di un tartufaio e il suo cane, che ti aiuteranno a scoprire e raccogliere prelibati tartufi."
     }
   ]
 }

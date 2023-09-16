@@ -65,6 +65,20 @@
             font-size: 40px;
         }
 
+        h2 {
+            color: #003C74;
+            font-family: 'Amatic SC', sans-serif;
+            font-weight: 700;
+        }
+
+        body.large-screen-font h2 {
+            font-size: 35px;
+        }
+
+        body.small-screen-font h2 {
+            font-size: 25px;
+        }
+
         /* Utils */
         .shadow {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -366,12 +380,12 @@
             src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/separator.jpg">
 
         <div class="horizontal-stack" style="margin: 15px;">
-            <div class="shadow large-screen">
+            <div id="experiences" class="shadow large-screen">
                 <div class="vertical-stack">
                     <h1 style="margin: 15px;">Le nostre iniziative</h1>
                     <div id="iniziative">
                         <h2 id="titoloIniziativa">Title</h2>
-                        <img id="immagineIniziativa" src="">
+                        <img id="immagineIniziativa" src="" style="max-width: 45%;" class="shadow">
                         <p id="descrizioneIniziativa">Description</p>
                     </div>
                 </div>
@@ -513,6 +527,7 @@
         const territorio = document.getElementById('territorio');
         const product = document.getElementById('product');
         const timetable = document.getElementById('timetable');
+        const exp = document.getElementById('experiences');
         const description = document.getElementById('mobile_fullScreen_desc');
         const carousel = document.getElementById('carousel');
         const logo = document.getElementById('logo');
@@ -528,6 +543,7 @@
                 logoVS.className = 'vertical-stack';
                 descVS.className = 'vertical-stack';
                 timetable.className = 'shadow small-screen';
+                exp.className = 'shadow small-screen';
                 contatti.style.textAlign = 'center';
                 body.className = 'small-screen-font';
                 description.className = 'shadow vertical-stack small-screen';
@@ -535,6 +551,7 @@
                 logoVS.className = 'vertical-stack';
                 descVS.className = 'vertical-stack';
                 timetable.className = 'shadow small-screen';
+                exp.className = 'shadow small-screen';
                 carousel.className = 'carousel-mobile';
                 logo.style.maxWidth = '500px';
                 body.className = 'small-screen-font';
@@ -543,6 +560,7 @@
                 logoVS.className = 'vertical-stack';
                 descVS.className = 'vertical-stack';
                 timetable.className = 'shadow small-screen';
+                exp.className = 'shadow small-screen';
                 contatti.style.alignItems = 'center';
                 body.className = 'large-screen-font';
                 description.className = 'shadow vertical-stack small-screen';
@@ -550,6 +568,7 @@
                 logoVS.className = 'horizontal-stack';
                 descVS.className = 'horizontal-stack';
                 timetable.className = 'shadow large-screen';
+                exp.className = 'shadow large-screen';
                 contatti.style.alignItems = 'start';
                 body.className = 'large-screen-font';
                 description.className = 'shadow vertical-stack large-screen';
@@ -597,7 +616,7 @@
         }
 
         getExperiences();
-        setInterval(() => updateContent(currentExp), 5000);
+        setInterval(() => updateContent(currentExp), 7000);
 
         // --- Carousel fonctionality 
         let action;
