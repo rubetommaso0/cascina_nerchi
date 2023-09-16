@@ -474,7 +474,6 @@
                     const pomeriggioElement = document.getElementById('pomeriggio');
                     const giorniChiusuraElement = document.getElementById('giorniChiusura');
                     if (isChiusuraStagionale) {
-                        console.log(isChiusuraStagionale)
                         mattinoElement.innerHTML = `Chiuso`;
                         pomeriggioElement.innerHTML = `Chiuso`;
                         giorniChiusuraElement.innerHTML = "Tutto il mese, <br>per chiusura stagionale";
@@ -566,20 +565,39 @@
 
         // -- iniziativeCarousel functionality 
 
-        // Get references to the elements
         const titleElement = document.getElementById("titoloIniziativa");
         const imageElement = document.getElementById("immagineIniziativa");
         const descriptionElement = document.getElementById("descrizioneIniziativa");
 
-        // Change the content
-        function iniziativeCarouselScroll() {
-            titleElement.textContent = "New Title";
-            imageElement.src = "https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/image1.jpeg"; // Change image source
-            descriptionElement.textContent = "New Description";
+        let esperienze;
+        let currentExp = 0;
+
+        function updateContent(index) {
+            const iniziative = esperienze[index];
+
+            titleElement.textContent = iniziative.titolo;
+            imageElement.src = iniziative.immagine;
+            descriptionElement.textContent = iniziative.descrizione;
+
+            currentExp = (index + 1) % esperienze.length;
         }
 
-        iniziativeCarouselScroll()
+        async function getExperiences() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/esperienze/esperienze.json');
+                const data = await response.json();
+                esperienze = data.esperienze;
+                console.log(esperienze);
 
+                //set first experience as default
+                updateContent(currentExp);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        getExperiences();
+        setInterval(() => updateContent(currentExp), 5000);
 
         // --- Carousel fonctionality 
         let action;
