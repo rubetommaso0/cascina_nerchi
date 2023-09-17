@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+    <title>I nostri prodotti</title>
+    <style>
+        body {
+            background-color: #FFFFFF;
+            display: inline;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 99%;
+        }
+
+        /* Fonts */
+
+        .large-screen-font {
+            text-align: center;
+        }
+
+        .small-screen-font {
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+            justify-content: center;
+            color: rgba(0, 0, 0, 1);
+            font-family: 'Amatic SC', sans-serif;
+        }
+
+        body.large-screen-font p {
+            font-size: 30px;
+        }
+
+        body.small-screen-font p {
+            font-size: 22px;
+        }
+
+        h1 {
+            color: #003C74;
+            font-family: 'Dancing Script', sans-serif;
+            font-weight: 700;
+        }
+
+        body.large-screen-font h1 {
+            font-size: 55px;
+        }
+
+        body.small-screen-font h1 {
+            font-size: 40px;
+        }
+
+        /* Utils */
+        .shadow {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background-color: rgba(65, 105, 225, 0.05);
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        /* VS */
+        .vertical-stack {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .vertical-stack {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .vertical-stack p {
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        .vertical-stack section {
+            padding-top: 8px;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        .vertical-stack .img-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .vertical-stack .right-text {
+            display: flex;
+            text-align: start;
+            align-items: center;
+        }
+
+        /* HS */
+        .horizontal-stack {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            max-height: 50%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .horizontal-stack p {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .horizontal-stack section {
+            width: 45%;
+        }
+
+        .horizontal-stack .img-container {
+            padding-left: 15px;
+        }
+
+        .horizontal-stack .right-text {
+            display: flex;
+            justify-content: start;
+        }
+
+        /* Images */
+        img {
+            max-width: 60%;
+            height: auto;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+        }
+
+        .link {
+            font-family: 'Amatic SC', sans-serif;
+            font-size: 30px;
+            color: #336699;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body id = "body" class = "large-screen-font">
+    <div id="outer" class="vertical-stack"></div>
+
+    <script>
+        const hs = `<div class="horizontal-stack">`;
+        const vs = `<div class="vertical-stack">`;
+        const end = "</div>";
+
+        let index = 0;
+        let title;
+        let image;
+        let description;
+        let html = '';
+
+        // -- populate screen
+
+        const outerStack = document.getElementById('outer');
+        let esperienze;
+
+        const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth<700;
+
+        function updateContent(index, iniziativa) {
+            image = iniziativa.immagine;
+            title = iniziativa.titolo;
+            description = iniziativa.descrizione;
+
+            if (index % 2 == 0 && !isMobileDevice) {
+                html = html + hs;
+            }
+            html = html + `<section class="shadow">
+            <h1>
+                ${title}
+            </h1>
+            <div>
+                <img class="card-img" id="logo" src="${image}">
+            </div>
+            <p style="margin: 20px;">
+              ${description}
+            </p>
+            <p class = "link">Prenota ora<p>
+            </section>`;
+            if (index % 2 == 1 && !isMobileDevice) {
+                html = html + end;
+            }
+        }
+
+        async function getExperiences() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/esperienze/esperienze.json');
+                response.json().then(data => {
+                    esperienze = data.esperienze;
+                    console.log(esperienze);
+
+                    //populate
+                    esperienze.forEach(element => {
+                        updateContent(index, element);
+                        index = index + 1;
+                    });
+                    outerStack.innerHTML = html;
+                    if (isMobileDevice) {
+                        const body = document.getElementById("body");
+                        body.className = "small-screen-font"
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        getExperiences();
+
+    </script>
+
+</body>
+
+</html>
