@@ -190,7 +190,6 @@
             max-width: 65%;
             height: auto;
             align-items: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
         }
 
         .large-screen-separator {
@@ -310,12 +309,21 @@
     </style>
 </head>
 
+  <!-- 
+    TODO: 
+     -- make carousel dynamic
+     -- make territorio description, prodotti description, contacts, links, verbal directions dynamic
+     -- add scroll animations
+     -- add image animations
+     -- add border animations
+-->
+
 <body class="large-screen-font" id="body">
 
     <div class="vertical-stack" style="padding-bottom: 20px;">
         <div id="mobile_vertical_stack_logo">
             <div class="horizontal-stack"><img class="logo-img" id="logo"
-                    src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/cascina_nerchi.jpeg"
+                    src="home/cascina_nerchi.jpeg"
                     alt="Your Logo">
             </div>
             <div class="vertical-stack">
@@ -326,11 +334,11 @@
                 </div>
                 <div class="horizontal-stack img-container">
                     <a href="https://www.instagram.com">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/img1.jpeg"
+                        <img src="home/img1.jpeg"
                             alt="Image 1">
                     </a>
                     <a href="https://www.facebook.com/profile.php?id=100064617106598">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/img2.png"
+                        <img src="home/img2.png"
                             alt="Image 2">
                     </a>
                 </div>
@@ -343,13 +351,13 @@
     <div class="vertical-stack">
 
         <img class="large-screen-separator"
-            src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/separator.jpg">
+            src="home/separator.jpg">
 
         <div class="horizontal-stack">
             <div class="shadow vertical-stack large-screen" style="margin: 15px;" id="mobile_fullScreen_desc">
                 <h1>Chi siamo?</h1>
                 <img class="card-img" id="logo"
-                    src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/chiSiamo.jpeg">
+                    src="home/chiSiamo.jpeg">
                 <p style="margin: 5px;">L'azienda Cascina Nerchi si impegna attivamente nel processo di pascolo
                     rigenerativo,
                     un metodo agricolo che mira a ripristinare l’equilibrio dei prati e delle specie animali.<br>
@@ -360,13 +368,13 @@
         </div>
 
         <img class="large-screen-separator"
-            src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/separator.jpg">
+            src="home/separator.jpg">
 
         <div id="mobile_vertical_stack_desc" class="horizontal-stack">
             <section id="product" class="shadow">
                 <h1>Il prodotto</h1>
                 <img class="card-img" id="logo"
-                    src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/prodotto.jpeg">
+                    src="home/prodotto.jpeg">
                 <p style="margin: 20px;">I nostri formaggi sono prodotti con latte fresco e
                     ogni passo del processo di produzione è eseguito con cura, dall'iniziale pascolo libero
                     degli animali alla mungitura a mano. <br>
@@ -380,7 +388,7 @@
             <section id="territorio" class="shadow">
                 <h1>Il territorio</h1>
                 <img class="card-img" id="logo"
-                    src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/territorio.jpeg">
+                    src="home/territorio.jpeg">
                 <p style="margin: 20px;">Il Montebore, un territorio povero ma generoso, offre esperienze senza tempo.
                     Tra Appennino e calanchi, esso racconta una storia ricca di tradizioni..<br>
                     Nonostante la sua asprezza, dona esperienze veraci, essendo rimasto intatto dalle influenze della
@@ -393,7 +401,7 @@
         </div>
 
         <img class="large-screen-separator"
-            src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/separator.jpg">
+            src="home/separator.jpg">
 
         <div class="horizontal-stack" style="margin: 15px;">
             <div id="experiences" class="shadow large-screen">
@@ -410,7 +418,7 @@
         </div>
 
         <img class="large-screen-separator"
-            src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/separator.jpg">
+            src="home/separator.jpg">
 
         <div class="horizontal-stack" style="margin: 15px;">
             <div id="timetable" class="shadow large-screen">
@@ -435,39 +443,39 @@
         </div>
 
         <img class="large-screen-separator" id="separator"
-            src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/separator.jpg">
+            src="home/separator.jpg">
 
         <div class="horizontal-stack" style="margin: 15px;">
             <div class="shadow" style="overflow: hidden;">
                 <div class="vertical-stack">
                     <h1>Galleria</h1>
                     <div id="carousel" class="carousel">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/image1.jpeg"
+                        <img src="carousel/image1.jpeg"
                             alt="Image 1" onclick="showFullScreenImage(this)">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/image2.jpeg"
+                        <img src="carousel/image2.jpeg"
                             alt="Image 2" onclick="showFullScreenImage(this)">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/image3.jpeg"
+                        <img src="carousel/image3.jpeg"
                             alt="Image 3" onclick="showFullScreenImage(this)">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/image4.jpeg"
+                        <img src="carousel/image4.jpeg"
                             alt="Image 4" onclick="showFullScreenImage(this)">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/image5.jpeg"
+                        <img src="carousel/image5.jpeg"
                             alt="Image 5" onclick="showFullScreenImage(this)">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/image6.jpeg"
+                        <img src="carousel/image6.jpeg"
                             alt="Image 6" onclick="showFullScreenImage(this)">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/image7.jpeg"
+                        <img src="carousel/image7.jpeg"
                             alt="Image 7" onclick="showFullScreenImage(this)">
-                        <img src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/image8.jpeg"
+                        <img src="carousel/image8.jpeg"
                             alt="Image 8" onclick="showFullScreenImage(this)">
                     </div>
                     <div class="controls-section" style="margin: 10px;">
                         <img id="prev-arrow" class="control-images"
-                            src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/chevron-left.png"
+                            src="carousel/chevron-left.png"
                             alt="indietro">
                         <img id="next-arrow" class="control-images"
-                            src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/chevron-right.png"
+                            src="carousel/chevron-right.png"
                             alt="avanti">
                         <img id="play" class="control-images"
-                            src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/play.png"
+                            src="carousel/play.png"
                             alt="play">
                     </div>
                 </div>
@@ -475,7 +483,7 @@
         </div>
 
         <img class="large-screen-separator"
-            src="https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/separator.jpg">
+            src="home/separator.jpg">
 
         <div style="flex-direction: column; padding-bottom: 40px; padding-top: 20px; margin: 15px;">
             <h1>Dove ci puoi trovare?</h1>
@@ -497,10 +505,10 @@
     <script>
 
         function updateTimetable() {
-            fetch('https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/data.json')
+            fetch('jsonData/data.json')
                 .then(response => response.json())
                 .then(data => {
-                    const isChiusuraStagionale = data.data.timetable.chiusuraStagionale;
+                    const isChiusuraStagionale = data.chiusuraStagionale;
                     const mattinoElement = document.getElementById('mattino');
                     const pomeriggioElement = document.getElementById('pomeriggio');
                     const giorniChiusuraElement = document.getElementById('giorniChiusura');
@@ -509,9 +517,8 @@
                         pomeriggioElement.innerHTML = `Chiuso`;
                         giorniChiusuraElement.innerHTML = "Tutto il mese, <br>per chiusura stagionale";
                     } else {
-                        const timetableData = data.data.timetable;
                         // Update morning timetable
-                        const mattinaData = timetableData.mattina;
+                        const mattinaData = data.mattina;
                         if (mattinaData.length == 0) {
                             mattinoElement.innerHTML = `Chiuso`;
                         } else {
@@ -519,7 +526,7 @@
                             mattinoElement.innerHTML = `Dalle ${mattinoTimings}`;
                         }
                         // Update afternoon timetable
-                        const pomeriggioData = timetableData.pomeriggio
+                        const pomeriggioData = data.pomeriggio
                         if (pomeriggioData.length == 0) {
                             pomeriggioElement.innerHTML = `Chiuso`;
                         } else {
@@ -528,7 +535,7 @@
                         }
 
                         // Update closed days
-                        giorniChiusuraElement.innerHTML = `${timetableData.giorniChiusura.join('<br>')}`;
+                        giorniChiusuraElement.innerHTML = `${data.giorniChiusura.join('<br>')}`;
                     }
                 })
                 .catch(error => console.error('Error:', error));
@@ -629,7 +636,7 @@
 
         async function getExperiences() {
             try {
-                const response = await fetch('https://raw.githubusercontent.com/rubetommaso0/cascina_nerchi/main/esperienze/esperienze.json');
+                const response = await fetch('jsonData/esperienze.json');
                 const data = await response.json();
                 esperienze = data.esperienze;
                 console.log(esperienze);

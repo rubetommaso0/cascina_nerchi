@@ -1,0 +1,44 @@
+{
+    "prodotti": [
+        {
+            "title": "Caprino fresco",
+            "img": "prodotti/caprino.jpg",
+            "description": "Formaggio a base di latte di capra non stagionato. Ha una consistenza morbida e cremosa con un sapore delicato e leggermente acidulo. È ottimo da spalmare su pane fresco o come ingrediente in insalate e piatti estivi.",
+            "tipoLatte": "Latte di capra",
+            "origine": "Piemonte, Italia",
+            "stagionatura": "6 mesi"
+        },
+        {
+            "title": "Montebore",
+            "img": "prodotti/montebore.jpg",
+            "description": "Il Montebore è un formaggio italiano a pasta cruda e semicotta. È caratterizzato da una forma particolare a tre piani, con un foro al centro. La sua pasta è composta da latte di pecora, capra e mucca. Ha un sapore complesso e leggermente erbaceo.",
+            "tipoLatte": "Latte di pecora",
+            "origine": "Lombardia, Italia",
+            "stagionatura": "12 settimane"
+        },
+        {
+            "title": "Caprino stagionato in foglie di castagno",
+            "img": "prodotti/castagno.jpg",
+            "description": "Questo formaggio è un caprino che viene stagionato in foglie di castagno, che conferiscono al formaggio un sapore unico e distintivo. Le foglie di castagno contribuiscono a dare al formaggio aromi leggermente terrosi e un caratteristico profumo di bosco.",
+            "tipoLatte": "Latte di mucca",
+            "origine": "Toscana, Italia",
+            "stagionatura": "4 mesi"
+        },
+        {
+            "title": "Toma",
+            "img": "prodotti/toma.jpg",
+            "description": "La Toma è un formaggio tradizionale delle Alpi italiane e francesi. Viene prodotto principalmente con latte vaccino. A seconda della stagionatura, può avere diverse consistenze, da morbida a semi-dura. Ha un sapore ricco e nutrito, con note di nocciola.",
+            "tipoLatte": "Latte di pecora",
+            "origine": "Emilia-Romagna, Italia",
+            "stagionatura": "8 settimane"
+        },
+        {
+            "title": "Erborinato",
+            "img": "prodotti/erborinato.jpeg",
+            "description": "L'Erborinato è un formaggio a pasta semi-dura o dura, tipicamente di colore bianco con venature blu-verdi dovute all'aggiunta di muffe durante la produzione. Ha un sapore robusto e complesso, con note piccanti e salate. È un formaggio molto apprezzato negli abbinamenti con miele e frutta secca.",
+            "tipoLatte": "Latte di capra",
+            "origine": "Liguria, Italia",
+            "stagionatura": "3 mesi"
+        }
+    ]
+}

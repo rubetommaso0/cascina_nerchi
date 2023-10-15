@@ -1,0 +1,28 @@
+{
+    "sections": [
+        {
+            "img": "territorio/colli-tortonesi.jpeg",
+            "description": "Situata nel cuore del Sud-Ovest Piemontese, la città di riferimento per questo territorio è Tortona, snodo autostradale cruciale tra Milano, Genova e Torino e città industriale di rilevanza europea. <br> <br> Avventurandosi tra le colline poco distanti, i Colli Tortonesi, si possono scoprire i suoi tesori: <br>i vini, come il Timorasso, stanno conquistando fama internazionale, ma anche i prodotti locali, come le pesche di Volpedo, sono apprezzate in tutto il Nord Italia. <br> Questo territorio collinare offre una grande varietà di esperienze che includono cene tradizionali in agriturismi, visite a cantine e passeggiate panoramiche, ma soprattutto l'opportunità di gustare una cucina che unisce sapientemente influenze piemontesi, liguri, lombarde ed emiliane."
+        },
+        {
+            "img": "territorio/montebore.jpg",
+            "description": "Le nostre zone, situate dove i colli tortonesi incontrano l'appennino Ligure, dal Montebore fino al monte Giarolo, sono un connubio di paesaggi mozzafiato e storia. <br> Qui, tra i boschi verdeggianti e lungo l'antica via del sale, sorgono i pittoreschi borghi medievali di Garbagna, Vigoponzo e Montebore, conosciuti per le eccellenze gastronomiche come salumi, tartufi e l'omonimo formaggio."
+        },
+        {
+            "img": "territorio/garbagna.jpeg",
+            "description": "A Garbagna, classificato tra i borghi più belli d'italia, consigliamo di visitare il Castello medievale, e la Chiesa di San Giovanni Battista. <br> La sua zona è celebre per la Ciliegia di Garbagna e altre delizie come le Castagnette e la Torta di Riso."
+        },
+        {
+            "img": "territorio/borbera.jpg",
+            "description": "Poco distanti, le valli Curone e Borbera, sono famose per essere state il terreno di allenamento di due leggende del ciclismo: <br> Fausto Coppi e Costante Girardengo. <br> Esse sono ricche di bellezze ambientali tutte da scoprire, come il torrente Borbera. <br> Le suggestive anse e meandri, noti come “Strette”, offrono uno spettacolo naturale unico e sono un ambiente ideale per l'attività all'aperto, come una rinfrescante visita al fiume, o anche il canottaggio, tra Pertuso e Perti."
+        },
+        {
+            "img": "territorio/mulino.jpg",
+            "description": "Le nostre valli sono testimoni di una grande civiltà contadina: <br> la popolazione, storicamente stanziale, ha preservato usanze e tradizioni, compresa la cucina unica. <br> Con antichi mulini a pietra ancora in funzione e l'abbondanza di fauna selvatica è una regione adatta per gli amanti della selvaggina e dei prodotti tradizionali."
+        },
+        {
+            "img": null,
+            "description": "Le Terre del Giarolo e il territorio del Montebore sono una destinazione affascinante, dove la natura, la storia e la cucina si fondono in un'esperienza indimenticabile. <br> <br> Veniteci a trovare!"
+        }
+    ]
+}

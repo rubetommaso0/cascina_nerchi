@@ -12,6 +12,7 @@
     <title>Il territorio del Montebore</title>
     <style>
         .vertical-stack {
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -58,8 +59,8 @@
 
         p {
             margin: 0;
-            margin-top: 30px;
-            margin-bottom: 30px;
+            margin-top: 20px;
+            margin-bottom: 25px;
             justify-content: center;
             color: rgba(0, 0, 0, 1);
             font-family: 'Amatic SC', sans-serif;
@@ -75,7 +76,7 @@
 
         img {
             height: auto;
-            margin-bottom: 20px;
+            margin-top: 30px;
         }
 
         body.small-screen-font img {
@@ -114,91 +115,43 @@
     </style>
 
 </head>
+<!-- 
+    TODO: 
+     -- add scroll animations
+-->
 
 <body class="large-screen-font" id="body">
 
-    <div class="vertical-stack">
+    <div class="vertical-stack" id="outer"> </div>
 
+    <script>
+        const outerStack = document.getElementById('outer');
+        innerHTML = `<h1>Il Montebore e le terre del Giarolo</h1>
+        <img class="separator" src="home/separator.jpg" style="margin-bottom: 45px;">`;
+        async function fetchJson() {
+            try {
+                const response = await fetch('jsonData/territorioSections.json');
+                response.json().then(data => {
+                    sec = data.sections;
+                    //populate
+                    sec.forEach(element => {
+                        imageSrc = element.img;
+                        description = element.description;
+                        if (imageSrc != null) {
+                            innerHTML = innerHTML + `<img src="${imageSrc}" class="shadow">` + `<p>${description}</p>`
+                        } else {
+                            innerHTML = innerHTML + `<p>${description}</p>`
+                        }
+                    });
+                    outerStack.innerHTML = innerHTML;
+                });
 
-
-        <div id="vertical_mobile" class="horizontal-stack">
-            <div class="vertical-stack large-screen" id="mobile_fullScreen_desc">
-                <h1>Il Montebore e le terre del Giarolo</h1>
-                <img class="separator" src="separator.jpg" style="margin-bottom: 45px;">
-                <p>
-                    Situata nel cuore del Sud-Ovest Piemontese, la città di riferimento per questo territorio è Tortona,
-                    snodo autostradale cruciale tra Milano,
-                    Genova e Torino e città industriale di rilevanza europea.
-                    <br>
-                    <br>
-                    Avventurandosi tra le colline poco distanti, i
-                    Colli Tortonesi, si possono scoprire i suoi tesori:
-                    <br>i vini, come il Timorasso, stanno
-                    conquistando fama internazionale, ma anche i prodotti locali,
-                    come le pesche di Volpedo, sono apprezzate in tutto il Nord Italia.
-                    <br>
-                    Questo territorio collinare offre una grande varietà di esperienze che includono cene
-                    tradizionali in agriturismi, visite a cantine e passeggiate panoramiche, ma soprattutto
-                    l'opportunità di
-                    gustare una cucina che unisce sapientemente influenze piemontesi, liguri, lombarde ed emiliane.
-                </p>
-                <img src="territorio/colli-tortonesi.jpeg" class="shadow">
-                <p>
-                    Le nostre zone, situate dove i colli tortonesi incontrano l'appennino Ligure, dal Montebore fino al
-                    monte Giarolo, sono un connubio di paesaggi mozzafiato e storia.
-                    <br>
-                    Qui, tra i boschi verdeggianti e lungo l'antica via del sale, sorgono i pittoreschi borghi medievali
-                    di Garbagna, Vigoponzo e Montebore, conosciuti per le eccellenze gastronomiche come salumi, tartufi
-                    e l'omonimo
-                    formaggio.
-                </p>
-                <img src="territorio/montebore.jpg" class="shadow">
-                <p>
-                    A Garbagna, classificato tra i borghi più belli d'italia, consigliamo di visitare il Castello
-                    medievale, e la
-                    Chiesa di San Giovanni Battista.
-                    <br>
-                    La sua zona è celebre per la Ciliegia di Garbagna e
-                    altre delizie come le Castagnette e la Torta di Riso.
-                </p>
-                <img src="territorio/garbagna.jpeg" class="shadow">
-                <p>
-                    Poco distanti, le valli Curone e Borbera, sono famose per essere state il terreno di
-                    allenamento di due leggende del ciclismo:
-                    <br>
-                    Fausto Coppi e Costante Girardengo.
-                    <br>
-                    Esse sono ricche di bellezze ambientali tutte da scoprire, come il torrente
-                    Borbera.
-                    <br>
-                    Le suggestive anse e meandri, noti come “Strette”, offrono uno
-                    spettacolo naturale unico e sono un ambiente ideale per
-                    l'attività all'aperto, come una rinfrescante visita al fiume, o anche il canottaggio, tra Pertuso e
-                    Perti.
-                </p>
-                <img src="territorio/borbera.jpg" class="shadow">
-                <p>
-                    Le nostre valli sono testimoni di una grande civiltà contadina:
-                    <br>
-                    la popolazione,
-                    storicamente stanziale, ha preservato usanze e tradizioni, compresa la cucina unica.
-                    <br>
-                    Con antichi mulini a pietra ancora in funzione e l'abbondanza di fauna
-                    selvatica è una regione adatta per gli amanti della selvaggina e dei prodotti tradizionali.
-                </p>
-                <img src="territorio/mulino.jpg" class="shadow">
-                <p>
-                    Le Terre del Giarolo e il territorio del Montebore sono una
-                    destinazione affascinante, dove la natura, la storia e la cucina
-                    si fondono in un'esperienza indimenticabile.
-                    <br>
-                    <br>
-                    Veniteci a trovare!
-                </p>
-            </div>
-        </div>
-
-    </div>
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+        fetchJson();
+    </script>
 
     <script>
         const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
