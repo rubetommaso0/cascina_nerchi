@@ -179,6 +179,31 @@
             justify-content: start;
         }
 
+        /* VS-Flex  */
+
+        .vertical-stack-flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .vertical-stack-flex p {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .vertical-stack-flex section {
+            padding-top: 8px;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
         /* Logo Image */
         .logo-img {
             max-width: 350px;
@@ -309,11 +334,9 @@
     </style>
 </head>
 
-  <!-- 
+<!-- 
     TODO: 
-     -- make carousel dynamic
-     -- make territorio description, prodotti description, contacts, links, verbal directions dynamic
-     -- add scroll animations
+     3- add scroll animations
      -- add image animations
      -- add border animations
 -->
@@ -322,86 +345,38 @@
 
     <div class="vertical-stack" style="padding-bottom: 20px;">
         <div id="mobile_vertical_stack_logo">
-            <div class="horizontal-stack"><img class="logo-img" id="logo"
-                    src="home/cascina_nerchi.jpeg"
+            <div class="horizontal-stack"><img class="logo-img" id="logo" src="home/cascina_nerchi.jpeg"
                     alt="Your Logo">
             </div>
             <div class="vertical-stack">
                 <div class="right-text vertical-stack" id="contatti">
                     <p style="padding-top: 0px; padding-bottom: 5px;"><strong>Contatti</strong></p>
-                    <p style="padding-top: 0px; padding-bottom: 5px;"><strong>Tel</strong> 347 6417 074</p>
-                    <p style="padding-top: 0px;"><strong>Email</strong> paracananzi@email.it</p>
+                    <p style="padding-top: 0px; padding-bottom: 5px;" id="tel"><strong>Tel</strong> </p>
+                    <p style="padding-top: 0px;" id="mail"><strong>Email</strong> </p>
                 </div>
                 <div class="horizontal-stack img-container">
-                    <a href="https://www.instagram.com">
-                        <img src="home/img1.jpeg"
-                            alt="Image 1">
+                    <a href="https://www.instagram.com" id="instagram">
+                        <img src="home/img1.jpeg" alt="Image 1">
                     </a>
-                    <a href="https://www.facebook.com/profile.php?id=100064617106598">
-                        <img src="home/img2.png"
-                            alt="Image 2">
+                    <a href="https://www.facebook.com/profile.php?id=100064617106598" id="facebook">
+                        <img src="home/img2.png" alt="Image 2">
                     </a>
                 </div>
             </div>
         </div>
-        <h1>"Dal nostro pascolo alla tua tavola"</h1>
-        <p>Produzione latte e formaggi caprini, di mucca o misti.</p>
+        <h1 id="sloganTitolo">"Dal nostro pascolo alla tua tavola"</h1>
+        <p id="sloganSottotitolo">Produzione latte e formaggi caprini, di mucca o misti.</p>
     </div>
 
     <div class="vertical-stack">
 
-        <img class="large-screen-separator"
-            src="home/separator.jpg">
+        <img class="large-screen-separator" src="home/separator.jpg">
 
-        <div class="horizontal-stack">
-            <div class="shadow vertical-stack large-screen" style="margin: 15px;" id="mobile_fullScreen_desc">
-                <h1>Chi siamo?</h1>
-                <img class="card-img" id="logo"
-                    src="home/chiSiamo.jpeg">
-                <p style="margin: 5px;">L'azienda Cascina Nerchi si impegna attivamente nel processo di pascolo
-                    rigenerativo,
-                    un metodo agricolo che mira a ripristinare l’equilibrio dei prati e delle specie animali.<br>
-                    La nostra dedizione è volta alla conservazione della natura e del benessere degli ecosistemi.
-                    Inoltre la produzione dei nostri formaggi è artigianale, con un piccolo caseificio che garantisce
-                    l'autenticità e la qualità del prodotto.</p>
-            </div>
+        <div id="dynamicSections">
+
         </div>
 
-        <img class="large-screen-separator"
-            src="home/separator.jpg">
-
-        <div id="mobile_vertical_stack_desc" class="horizontal-stack">
-            <section id="product" class="shadow">
-                <h1>Il prodotto</h1>
-                <img class="card-img" id="logo"
-                    src="home/prodotto.jpeg">
-                <p style="margin: 20px;">I nostri formaggi sono prodotti con latte fresco e
-                    ogni passo del processo di produzione è eseguito con cura, dall'iniziale pascolo libero
-                    degli animali alla mungitura a mano. <br>
-                    Il nostro impegno si traduce in formaggi dal sapore genuino, che riflettono la nostra
-                    dedizione in ogni fase della loro lavorazione.
-                </p>
-                <div class="horizontal-stack">
-                    <a href="https://rubetommaso0.github.io/cascina_nerchi/products.html">Scopri di più</a>
-                </div>
-            </section>
-            <section id="territorio" class="shadow">
-                <h1>Il territorio</h1>
-                <img class="card-img" id="logo"
-                    src="home/territorio.jpeg">
-                <p style="margin: 20px;">Il Montebore, un territorio povero ma generoso, offre esperienze senza tempo.
-                    Tra Appennino e calanchi, esso racconta una storia ricca di tradizioni..<br>
-                    Nonostante la sua asprezza, dona esperienze veraci, essendo rimasto intatto dalle influenze della
-                    modernità e lontano dalla frenesia cittadina.
-                </p>
-                <div class="horizontal-stack">
-                    <a href="https://rubetommaso0.github.io/cascina_nerchi/territorio.html">Scopri di più</a>
-                </div>
-            </section>
-        </div>
-
-        <img class="large-screen-separator"
-            src="home/separator.jpg">
+        <img class="large-screen-separator" src="home/separator.jpg">
 
         <div class="horizontal-stack" style="margin: 15px;">
             <div id="experiences" class="shadow large-screen">
@@ -412,13 +387,12 @@
                         <img id="immagineIniziativa" src="" style="max-width: 45%;" class="shadow">
                         <p id="descrizioneIniziativa"></p>
                     </div>
-                    <a href="https://rubetommaso0.github.io/cascina_nerchi/iniziative.html">Vedi tutto</a>
+                    <a href="iniziative.html">Vedi tutto</a>
                 </div>
             </div>
         </div>
 
-        <img class="large-screen-separator"
-            src="home/separator.jpg">
+        <img class="large-screen-separator" src="home/separator.jpg">
 
         <div class="horizontal-stack" style="margin: 15px;">
             <div id="timetable" class="shadow large-screen">
@@ -442,57 +416,36 @@
             </div>
         </div>
 
-        <img class="large-screen-separator" id="separator"
-            src="home/separator.jpg">
+        <img class="large-screen-separator" id="separator" src="home/separator.jpg">
 
         <div class="horizontal-stack" style="margin: 15px;">
             <div class="shadow" style="overflow: hidden;">
                 <div class="vertical-stack">
                     <h1>Galleria</h1>
                     <div id="carousel" class="carousel">
-                        <img src="carousel/image1.jpeg"
-                            alt="Image 1" onclick="showFullScreenImage(this)">
-                        <img src="carousel/image2.jpeg"
-                            alt="Image 2" onclick="showFullScreenImage(this)">
-                        <img src="carousel/image3.jpeg"
-                            alt="Image 3" onclick="showFullScreenImage(this)">
-                        <img src="carousel/image4.jpeg"
-                            alt="Image 4" onclick="showFullScreenImage(this)">
-                        <img src="carousel/image5.jpeg"
-                            alt="Image 5" onclick="showFullScreenImage(this)">
-                        <img src="carousel/image6.jpeg"
-                            alt="Image 6" onclick="showFullScreenImage(this)">
-                        <img src="carousel/image7.jpeg"
-                            alt="Image 7" onclick="showFullScreenImage(this)">
-                        <img src="carousel/image8.jpeg"
-                            alt="Image 8" onclick="showFullScreenImage(this)">
+
                     </div>
                     <div class="controls-section" style="margin: 10px;">
-                        <img id="prev-arrow" class="control-images"
-                            src="carousel/chevron-left.png"
-                            alt="indietro">
-                        <img id="next-arrow" class="control-images"
-                            src="carousel/chevron-right.png"
-                            alt="avanti">
-                        <img id="play" class="control-images"
-                            src="carousel/play.png"
-                            alt="play">
+                        <img id="prev-arrow" class="control-images" src="carousel/chevron-left.png" alt="indietro">
+                        <img id="next-arrow" class="control-images" src="carousel/chevron-right.png" alt="avanti">
+                        <img id="play" class="control-images" src="carousel/play.png" alt="play">
                     </div>
                 </div>
             </div>
         </div>
 
-        <img class="large-screen-separator"
-            src="home/separator.jpg">
+        <img class="large-screen-separator" src="home/separator.jpg">
 
         <div style="flex-direction: column; padding-bottom: 40px; padding-top: 20px; margin: 15px;">
             <h1>Dove ci puoi trovare?</h1>
-            <p>Località Nerchi, 1, 15056 Dernice AL</p>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2833.4589463531042!2d9.027492176120154!3d44.751054080737745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47875b512168c53f%3A0xc23dfac8d557e75!2sCASCINA%20NERCHI!5e0!3m2!1sit!2sit!4v1693775233261!5m2!1sit!2sit"
-                width=90% height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <p style="font-style: italic;">Partendo da Genova: uscite a Vignole Borbera,
+            <p id="indirizzo">Località Nerchi, 1, 15056 Dernice AL</p>
+            <div id="mappa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2833.4589463531042!2d9.027492176120154!3d44.751054080737745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47875b512168c53f%3A0xc23dfac8d557e75!2sCASCINA%20NERCHI!5e0!3m2!1sit!2sit!4v1693775233261!5m2!1sit!2sit"
+                    width=90% height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p style="font-style: italic;" id="indicazioni">Partendo da Genova: uscite a Vignole Borbera,
                 seguite le indicazioni per Cantalupo Ligure e poi verso Vigoponzo<br> -- <br>Partendo da Milano/Torino:
                 uscite a Tortona e seguite le indicazioni per Garbagna, prima di Garbagna girate verso Dernice</p>
         </div>
@@ -504,7 +457,98 @@
 
     <script>
 
-        function updateTimetable() {
+        let action;
+        var descVS = [];
+        var listener;
+
+        function updateFlexDirection(
+            isMobileDevice,
+            logoVS,
+            territorio,
+            product,
+            timetable,
+            exp,
+            dynamicSections,
+            fullScreenVS,
+            description,
+            carousel,
+            logo,
+            contatti,
+            body,
+            separators
+        ) {
+            console.log("UPDATE");
+            if (isMobileDevice && window.innerWidth < 600) {
+                logoVS.className = 'vertical-stack';
+                descVS.forEach(VS => {
+                    VS.className = 'vertical-stack-flex';
+                });
+                timetable.className = 'shadow small-screen';
+                exp.className = 'shadow small-screen';
+                contatti.style.textAlign = 'center';
+                body.className = 'small-screen-font';
+                fullScreenVS.forEach(VS => {
+                    VS.className = 'shadow vertical-stack small-screen';
+                });
+            } else if (isMobileDevice) {
+                logoVS.className = 'vertical-stack';
+                descVS.forEach(VS => {
+                    VS.className = 'vertical-stack-flex';
+                });
+                timetable.className = 'shadow small-screen';
+                exp.className = 'shadow small-screen';
+                logo.style.maxWidth = '500px';
+                body.className = 'small-screen-font';
+                fullScreenVS.forEach(VS => {
+                    VS.className = 'shadow vertical-stack small-screen';
+                });
+            } else if (!isMobileDevice && window.innerWidth < 910) {
+                logoVS.className = 'vertical-stack';
+                descVS.forEach(VS => {
+                    VS.className = 'vertical-stack-flex';
+                });
+                timetable.className = 'shadow small-screen';
+                exp.className = 'shadow small-screen';
+                contatti.style.alignItems = 'center';
+                body.className = 'large-screen-font';
+                fullScreenVS.forEach(VS => {
+                    VS.className = 'shadow vertical-stack small-screen';
+                });
+            } else if (!isMobileDevice) {
+                logoVS.className = 'horizontal-stack';
+                descVS.forEach(VS => {
+                    VS.className = 'horizontal-stack';
+                });
+                timetable.className = 'shadow large-screen';
+                exp.className = 'shadow large-screen';
+                contatti.style.alignItems = 'start';
+                body.className = 'large-screen-font';
+                fullScreenVS.forEach(VS => {
+                    VS.className = 'shadow vertical-stack large-screen';
+                });
+            }
+
+            return function (event) {
+                updateFlexDirection(
+                    isMobileDevice,
+                    logoVS,
+                    territorio,
+                    product,
+                    timetable,
+                    exp,
+                    dynamicSections,
+                    fullScreenVS,
+                    description,
+                    carousel,
+                    logo,
+                    contatti,
+                    body,
+                    separators
+                );
+            }
+        }
+
+        function updatePage() {
             fetch('jsonData/data.json')
                 .then(response => response.json())
                 .then(data => {
@@ -539,72 +583,276 @@
                     }
                 })
                 .catch(error => console.error('Error:', error));
+
+            fetch('jsonData/homepageStatic.json')
+                .then(response => response.json())
+                .then(data => {
+                    const contatti = data.contatti;
+                    const slogan = data.slogan;
+                    const pos = data.doveTrovarci;
+                    // Get the <p> elements by their IDs
+                    var telElement = document.getElementById("tel");
+                    var mailElement = document.getElementById("mail");
+
+                    // Update the inner HTML of the elements
+                    telElement.innerHTML = `<strong>Tel</strong> ${contatti.tel}`;
+                    mailElement.innerHTML = `<strong>Email</strong> ${contatti.email}`;
+
+                    // Populate slogan elements
+                    document.getElementById("sloganTitolo").textContent = `"` + data.slogan.titolo + `"`;
+                    document.getElementById("sloganSottotitolo").textContent = data.slogan.sottotitolo;
+
+                    // Populate doveTrovarci elements
+                    document.getElementById("indirizzo").textContent = data.doveTrovarci.indirizzo;
+                    document.getElementById("indicazioni").innerHTML = data.doveTrovarci.indicazioni;
+
+                    document.getElementById("instagram").href = data.instagram;
+                    document.getElementById("facebook").href = data.facebook;
+                })
+                .catch(error => console.error('Error:', error));
+
+            fetch('jsonData/homepageDynamic.json')
+                .then(response => response.json())
+                .then(data => {
+                    var ind = 0;
+                    const dynamicSectionsContainer = document.getElementById('dynamicSections');
+                    var currentSection;
+                    var currentSectionData = '';
+                    var lastDiv;
+
+                    data.dynamicSections.forEach(sectionData => {
+                        if (ind == 0) {
+                            currentSection = document.createElement('div');
+                            currentSection.classList.add('horizontal-stack');
+                            console.log("a" + ind);
+                            currentSection.innerHTML = `
+            <div class="shadow vertical-stack large-screen" style="margin: 15px;">
+                <h1>${sectionData.title}</h1>
+                <img class="card-img" id="logo" src="${sectionData.image}">
+                <p style="margin: 5px;">${sectionData.description}</p>
+                ${sectionData.link !== null ? `<a href="${sectionData.link}">Scopri di più</a>` : ''}
+            </div>
+        `;
+                            dynamicSectionsContainer.appendChild(currentSection);
+                            ind++;
+                        }
+                        else if (ind % 2 == 1) {
+                            currentSection = document.createElement('div');
+                            currentSection.classList.add('horizontal-stack');
+                            console.log("b" + ind);
+                            currentSectionData = currentSectionData + `
+            <section class="shadow vertical-stack large-screen" style="margin: 15px;">
+                <h1>${sectionData.title}</h1>
+                <img class="card-img" id="logo" src="${sectionData.image}">
+                <p style="margin: 5px;">${sectionData.description}</p>
+                ${sectionData.link !== null ? `<a href="${sectionData.link}">Scopri di più</a>` : ''}
+            </section>
+        `;
+                            if (ind == dynamicSections.length - 1) {
+                                currentSection.innerHTML = currentSectionData;
+                                dynamicSectionsContainer.appendChild(currentSection);
+                                currentSectionData = ''
+                                descVS.push(currentSection);
+                            }
+                            ind++;
+                        } else {
+                            console.log("c" + ind + ind % 2);
+                            currentSectionData = currentSectionData + `
+            <section class="shadow vertical-stack large-screen" style="margin: 15px;">
+                <h1>${sectionData.title}</h1>
+                <img class="card-img" id="logo" src="${sectionData.image}">
+                <p style="margin: 5px;">${sectionData.description}</p>
+                ${sectionData.link !== null ? `<a href="${sectionData.link}">Scopri di più</a>` : ''}
+            </section>
+        `;
+                            currentSection.innerHTML = currentSectionData;
+                            dynamicSectionsContainer.appendChild(currentSection);
+                            currentSectionData = ''
+                            descVS.push(currentSection);
+                        }
+                    });
+
+                })
+                .catch(error => console.error('Error:', error));
+
+            fetch('jsonData/carouselImages.json')
+                .then(response => response.json())
+                .then(data => {
+
+                    const carouselContainer = document.getElementById('carousel');
+
+                    data.carouselImage.forEach((imageUrl, index) => {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = imageUrl;
+                        imgElement.alt = `Image ${index + 1}`;
+                        imgElement.onclick = () => showFullScreenImage(imgElement);
+
+                        carouselContainer.appendChild(imgElement);
+                    });
+
+                    for (let index = 0; index <= 4; index++) {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = data.carouselImage[index];
+                        imgElement.alt = `LastImages ${index + 1}`;
+                        imgElement.onclick = () => showFullScreenImage(imgElement);
+
+                        carouselContainer.appendChild(imgElement);
+                    }
+
+
+                })
+                .then(ok => {
+                    // --- Carousel fonctionality 
+                    const images = carousel.querySelectorAll("img");
+                    const firstImage = carousel.querySelector("img");
+                    const nextArrow = document.getElementById("next-arrow");
+                    const prevArrow = document.getElementById("prev-arrow");
+                    const play = document.getElementById("play");
+
+                    let currentImageIndex = 0;
+                    var offset;
+
+                    firstImage.onload = function () {
+                        offset = 300;
+                    }
+
+                    function showImage(index) {
+                        images.forEach((image, i) => {
+                            if (i === index) {
+                                image.classList.add("active");
+                            } else {
+                                image.classList.remove("active");
+                            }
+                        });
+                    }
+
+                    function scrollCarousel(index) {
+                        const scrollPosition = -offset * index;
+                        carousel.style.transform = `translateX(${scrollPosition}px)`;
+                    }
+
+                    function nextImage() {
+                        currentImageIndex = (currentImageIndex + 1) % (images.length - 5);
+                        showImage(currentImageIndex);
+                        scrollCarousel(currentImageIndex);
+                    }
+
+                    function prevImage() {
+                        if (currentImageIndex != 0) {
+                            currentImageIndex = (currentImageIndex - 1) % images.length;
+                            showImage(currentImageIndex);
+                            scrollCarousel(currentImageIndex);
+                        }
+                    }
+
+                    // Initial display
+                    showImage(currentImageIndex);
+                    scrollCarousel(currentImageIndex)
+
+                    // Automatically change images every 3 seconds
+                    function startAutoSlide() {
+                        action = setInterval(nextImage, 3000);
+                    }
+
+                    startAutoSlide()
+
+                    nextArrow.addEventListener("click", function () {
+                        clearInterval(action);
+                        nextImage();
+                    });
+                    prevArrow.addEventListener("click", function () {
+                        clearInterval(action);
+                        prevImage();
+                    });
+                    play.addEventListener("click", function () {
+                        nextImage()
+                        clearInterval(action);
+                        startAutoSlide() // Stop automatic sliding on arrow click
+                    });
+
+                    // Reset the carousel to the beginning without a roll-back effect
+                    function resetCarousel() {
+                        showImage(currentImageIndex);
+                        scrollCarousel(currentImageIndex);
+                    }
+
+                    // When the last image finishes transitioning, reset the carousel
+                    carousel.addEventListener("transitionend", function (event) {
+                        if (event.propertyName === "transform" && currentImageIndex >= images.length - 5) {
+                            currentImageIndex = 0;
+                            resetCarousel();
+                        }
+                    });
+                })
+                .then(ok => {
+                    // --- Handle different screen sizes
+                    const logoVS = document.getElementById('mobile_vertical_stack_logo');
+                    const territorio = document.getElementById('territorio');
+                    const product = document.getElementById('product');
+                    const timetable = document.getElementById('timetable');
+                    const exp = document.getElementById('experiences');
+                    const dynamicSections = document.getElementById('dynamicSections');
+                    const HS = dynamicSections.querySelectorAll('.horizontal-stack');
+                    var fullScreenVS = [];
+                    HS.forEach(hs => {
+                        hs.querySelectorAll(".large-screen").forEach(VS => {
+                            fullScreenVS.push(VS);
+                        });
+                    });
+                    const description = document.getElementById('mobile_fullScreen_desc');
+                    const carousel = document.getElementById('carousel');
+                    const logo = document.getElementById('logo');
+                    const contatti = document.getElementById('contatti');
+                    const body = document.getElementById('body');
+                    const separators = document.querySelectorAll("large-screen-separator");
+
+                    const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
+
+                    console.log(dynamicSections);
+                    console.log(HS);
+                    console.log(fullScreenVS);
+
+                    // Initial call to set the layout based on the window width
+                    updateFlexDirection(
+                        isMobileDevice,
+                        logoVS,
+                        territorio,
+                        product,
+                        timetable,
+                        exp,
+                        dynamicSections,
+                        fullScreenVS,
+                        description,
+                        carousel,
+                        logo,
+                        contatti,
+                        body,
+                        separators
+                    );
+
+                    // Add a listener for the window's resize event
+                    listener = window.addEventListener('resize', updateFlexDirection(
+                        isMobileDevice,
+                        logoVS,
+                        territorio,
+                        product,
+                        timetable,
+                        exp,
+                        dynamicSections,
+                        fullScreenVS,
+                        description,
+                        carousel,
+                        logo,
+                        contatti,
+                        body,
+                        separators
+                    ));
+                }
+                ).catch(error => console.error('Error:', error));
         }
 
         // Call the function to update the timetable
-        updateTimetable();
-
-
-        // --- Handle different screen sizes
-        const logoVS = document.getElementById('mobile_vertical_stack_logo');
-        const descVS = document.getElementById('mobile_vertical_stack_desc');
-        const territorio = document.getElementById('territorio');
-        const product = document.getElementById('product');
-        const timetable = document.getElementById('timetable');
-        const exp = document.getElementById('experiences');
-        const description = document.getElementById('mobile_fullScreen_desc');
-        const carousel = document.getElementById('carousel');
-        const logo = document.getElementById('logo');
-        const contatti = document.getElementById('contatti');
-        const body = document.getElementById('body');
-        const separators = document.querySelectorAll("large-screen-separator");
-
-        const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
-
-
-        function updateFlexDirection() {
-            if (isMobileDevice && window.innerWidth < 600) {
-                logoVS.className = 'vertical-stack';
-                descVS.className = 'vertical-stack';
-                timetable.className = 'shadow small-screen';
-                exp.className = 'shadow small-screen';
-                contatti.style.textAlign = 'center';
-                body.className = 'small-screen-font';
-                description.className = 'shadow vertical-stack small-screen';
-            } else if (isMobileDevice) {
-                logoVS.className = 'vertical-stack';
-                descVS.className = 'vertical-stack';
-                timetable.className = 'shadow small-screen';
-                exp.className = 'shadow small-screen';
-                carousel.className = 'carousel-mobile';
-                logo.style.maxWidth = '500px';
-                body.className = 'small-screen-font';
-                description.className = 'shadow vertical-stack small-screen';
-            } else if (!isMobileDevice && window.innerWidth < 910) {
-                logoVS.className = 'vertical-stack';
-                descVS.className = 'vertical-stack';
-                timetable.className = 'shadow small-screen';
-                exp.className = 'shadow small-screen';
-                contatti.style.alignItems = 'center';
-                body.className = 'large-screen-font';
-                description.className = 'shadow vertical-stack small-screen';
-            } else if (!isMobileDevice) {
-                logoVS.className = 'horizontal-stack';
-                descVS.className = 'horizontal-stack';
-                timetable.className = 'shadow large-screen';
-                exp.className = 'shadow large-screen';
-                contatti.style.alignItems = 'start';
-                body.className = 'large-screen-font';
-                description.className = 'shadow vertical-stack large-screen';
-            }
-        }
-
-        // Initial call to set the layout based on the window width
-        updateFlexDirection();
-
-        // Add a listener for the window's resize event
-        window.addEventListener('resize', updateFlexDirection);
-
+        updatePage();
 
         // -- iniziativeCarousel functionality 
 
@@ -651,103 +899,11 @@
         getExperiences();
         setInterval(() => updateContent(currentExp), 8000);
 
-        // --- Carousel fonctionality 
-        let action;
-        document.addEventListener("DOMContentLoaded", function () {
-            const images = carousel.querySelectorAll("img");
-            const nextArrow = document.getElementById("next-arrow");
-            const prevArrow = document.getElementById("prev-arrow");
-            const play = document.getElementById("play");
-
-            let currentImageIndex = 0;
-
-            let offset;
-            if (carousel.className == 'carousel-mobile') {
-                offset = 400;
-                play.className = 'control-images-mobile';
-                nextArrow.className = 'control-images-mobile';
-                prevArrow.className = 'control-images-mobile';
-            } else {
-                offset = 300;
-            }
-
-            function showImage(index) {
-                images.forEach((image, i) => {
-                    if (i === index) {
-                        image.classList.add("active");
-                    } else {
-                        image.classList.remove("active");
-                    }
-                });
-            }
-
-            function scrollCarousel(index) {
-                const scrollPosition = -offset * index;
-                carousel.style.transform = `translateX(${scrollPosition}px)`;
-            }
-
-            function nextImage() {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                showImage(currentImageIndex);
-                scrollCarousel(currentImageIndex);
-            }
-
-            function prevImage() {
-                if (currentImageIndex != 0) {
-                    currentImageIndex = (currentImageIndex - 1) % images.length;
-                    showImage(currentImageIndex);
-                    scrollCarousel(currentImageIndex);
-                }
-            }
-
-            // Initial display
-            showImage(currentImageIndex);
-            scrollCarousel(currentImageIndex)
-
-            // Automatically change images every 3 seconds
-            function startAutoSlide() {
-                action = setInterval(nextImage, 3000);
-            }
-
-            startAutoSlide()
-
-            nextArrow.addEventListener("click", function () {
-                clearInterval(action);
-                nextImage();
-            });
-            prevArrow.addEventListener("click", function () {
-                clearInterval(action);
-                prevImage();
-            });
-            play.addEventListener("click", function () {
-                nextImage()
-                clearInterval(action);
-                startAutoSlide() // Stop automatic sliding on arrow click
-            });
-
-            // Reset the carousel to the beginning without a roll-back effect
-            function resetCarousel() {
-                showImage(currentImageIndex);
-                scrollCarousel(currentImageIndex);
-            }
-
-            // When the last image finishes transitioning, reset the carousel
-            carousel.addEventListener("transitionend", function (event) {
-                if (event.propertyName === "transform" && currentImageIndex === images.length) {
-                    currentImageIndex = 0;
-                    resetCarousel();
-                }
-            });
-        });
-
         // --- Handle full screen images 
 
         function showFullScreenImage(image) {
             const modal = document.getElementById("image-modal");
             const fullScreenImage = document.getElementById("full-screen-image");
-            if (carousel.className == "carousel-mobile") {
-                fullScreenImage.style.paddingTop = "100px";
-            }
 
             modal.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
             fullScreenImage.src = image.src;

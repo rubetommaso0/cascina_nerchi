@@ -1,0 +1,22 @@
+{
+    "dynamicSections": [
+        {
+            "title": "Chi siamo?",
+            "description": "L'azienda Cascina Nerchi si impegna attivamente nel processo di pascolo rigenerativo, un metodo agricolo che mira a ripristinare l’equilibrio dei prati e delle specie animali. La nostra dedizione è volta alla conservazione della natura e del benessere degli ecosistemi. Inoltre la produzione dei nostri formaggi è artigianale, con un piccolo caseificio che garantisce l'autenticità e la qualità del prodotto.",
+            "link": null,
+            "image": "home/chiSiamo.jpeg"
+        },
+        {
+            "title": "Il prodotto",
+            "description": "I nostri formaggi sono prodotti con latte fresco e ogni passo del processo di produzione è eseguito con cura, dall'iniziale pascolo libero degli animali alla mungitura a mano. Il nostro impegno si traduce in formaggi dal sapore genuino, che riflettono la nostra dedizione in ogni fase della loro lavorazione.",
+            "link": "products.html",
+            "image": "home/prodotto.jpeg"
+        },
+        {
+            "title": "Il territorio",
+            "description": "Il Montebore, un territorio povero ma generoso, offre esperienze senza tempo. Tra Appennino e calanchi, esso racconta una storia ricca di tradizioni. Nonostante la sua asprezza, dona esperienze veraci, essendo rimasto intatto dalle influenze della modernità e lontano dalla frenesia cittadina.",
+            "link": "territorio.html",
+            "image": "home/territorio.jpeg"
+        }
+    ]
+}
