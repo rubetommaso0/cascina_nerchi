@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <title>Cascina Nerchi 🐐🧀</title>
     <style>
+        section {
+            display: flex;
+        }
+
         body {
             background-color: #FFFFFF;
             display: inline;
@@ -25,6 +29,9 @@
             font-family: 'Amatic SC', sans-serif;
             font-size: 30px;
             color: #336699;
+            margin-bottom: 30px;
+            display: flex;
+            align-self: center;
         }
 
         /* Fonts */
@@ -98,7 +105,6 @@
 
         /* Utils */
         .shadow {
-            display: flex;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
             background-color: rgba(65, 105, 225, 0.05);
@@ -326,6 +332,29 @@
             justify-content: center;
         }
 
+        .slogan {
+            opacity: 0;
+            animation: sloganEaseIn 3s forwards;
+            animation-delay: 1.5s;
+            text-shadow: none;
+        }
+
+        @keyframes sloganEaseIn {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+
         /* Border Animations */
         .container {
             border-radius: 3px;
@@ -443,107 +472,133 @@
     </style>
 </head>
 
-<!-- 
-    TODO: 
-     -- add aos + border to timetable, iniziative, carousel
-     -- add image animations
--->
-
 <body class="large-screen-font" id="body">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <div class="vertical-stack" style="padding-bottom: 20px;" data-aos="fade-up">
-        <div id="mobile_vertical_stack_logo">
-            <div class="horizontal-stack"><img class="logo-img" id="logo" src="home/cascina_nerchi.jpeg"
-                    alt="Your Logo">
+    <div style="width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div class="vertical-stack" style="padding-bottom: 20px;">
+            <div id="mobile_vertical_stack_logo">
+                <div class="horizontal-stack" data-aos="fade-up" data-aos-duration="2600"><img class="logo-img"
+                        id="logo" src="home/cascina_nerchi.jpeg" alt="Your Logo">
+                </div>
+                <div class="vertical-stack">
+                    <div class="right-text vertical-stack" id="contatti" data-aos="flip-down" data-aos-duration="2600">
+                        <p style="padding-top: 0px; padding-bottom: 5px;">
+                            <strong>Contatti</strong>
+                        </p>
+                        <p style="padding-top: 0px; padding-bottom: 5px;" id="tel"><strong>Tel</strong> </p>
+                        <p style="padding-top: 0px;" id="mail">
+                            <strong>Email</strong>
+                        </p>
+                    </div>
+                    <div class="horizontal-stack img-container" data-aos="fade" data-aos-duration="2600">
+                        <a href="https://www.instagram.com" id="instagram">
+                            <img src="home/img1.jpeg" alt="Image 1">
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100064617106598" id="facebook">
+                            <img src="home/img2.png" alt="Image 2">
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="vertical-stack">
-                <div class="right-text vertical-stack" id="contatti">
-                    <p style="padding-top: 0px; padding-bottom: 5px;"><strong>Contatti</strong></p>
-                    <p style="padding-top: 0px; padding-bottom: 5px;" id="tel"><strong>Tel</strong> </p>
-                    <p style="padding-top: 0px;" id="mail"><strong>Email</strong> </p>
-                </div>
-                <div class="horizontal-stack img-container">
-                    <a href="https://www.instagram.com" id="instagram">
-                        <img src="home/img1.jpeg" alt="Image 1">
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=100064617106598" id="facebook">
-                        <img src="home/img2.png" alt="Image 2">
-                    </a>
-                </div>
+            <div class="slogan">
+                <h1 id="sloganTitolo">"Dal nostro pascolo alla tua tavola"</h1>
+                <p id="sloganSottotitolo">Produzione latte e formaggi caprini, di mucca o misti.</p>
             </div>
         </div>
-        <h1 id="sloganTitolo">"Dal nostro pascolo alla tua tavola"</h1>
-        <p id="sloganSottotitolo">Produzione latte e formaggi caprini, di mucca o misti.</p>
     </div>
+
+
 
     <div class="vertical-stack">
 
-        <img class="large-screen-separator" src="home/separator.jpg">
+        <img class="large-screen-separator" src="home/separator.jpg" data-aos="zoom-in" data-aos-duration="2600">
 
         <div id="dynamicSections">
 
         </div>
 
-        <img class="large-screen-separator" src="home/separator.jpg">
+        <img class="large-screen-separator" src="home/separator.jpg" data-aos="zoom-in" data-aos-duration="2600">
 
         <div class="horizontal-stack" style="margin: 15px;">
-            <div id="experiences" class="shadow large-screen">
-                <div class="vertical-stack">
-                    <h1 style="margin: 15px;">Le nostre iniziative</h1>
-                    <div id="iniziative" style="transition: opacity 1s;">
-                        <h2 id="titoloIniziativa"></h2>
-                        <img id="immagineIniziativa" src="" style="max-width: 45%;" class="shadow">
-                        <p id="descrizioneIniziativa"></p>
-                    </div>
-                    <a href="iniziative.html">Vedi tutto</a>
-                </div>
-            </div>
-        </div>
-
-        <img class="large-screen-separator" src="home/separator.jpg">
-
-        <div class="horizontal-stack" style="margin: 15px;">
-            <div id="timetable" class="shadow large-screen">
-                <div class="vertical-stack">
-                    <h1 style="margin: 15px;">I nostri orari</h1>
-                    <div class="horizontal-stack" style="justify-content: space-evenly;">
-                        <div class="vertical-stack" style="justify-content: space-between;">
-                            <h6 class="bold">Mattino</h6>
-                            <h6 id="mattino">Dalle 9<br>alle 12</h6>
+            <div class="container" style="margin: 15px" data-aos="fade-up" data-aos-duration="2000"
+                data-aos-delay="1300">
+                <div class="border-top"></div>
+                <div class="border-right"></div>
+                <div class="border-bottom"></div>
+                <div class="border-left"></div>
+                <div id="experiences" class="shadow large-screen">
+                    <div class="vertical-stack small-screen" style="display:flex;">
+                        <h1 style="margin: 15px;">Le nostre iniziative</h1>
+                        <div id="iniziative" style="transition: opacity 1s;">
+                            <h2 id="titoloIniziativa"></h2>
+                            <img id="immagineIniziativa" src="" style="max-width: 45%;" class="immagineIniziativa">
+                            <p id="descrizioneIniziativa"></p>
                         </div>
-                        <div class="vertical-stack" style="justify-content: space-between;">
-                            <h6 class="bold">Pomeriggio</h6>
-                            <h6 id="pomeriggio">Dalle 15<br>alle 18</h6>
-                        </div>
-                        <div class="vertical-stack" style="justify-content: space-between;">
-                            <h6 class="bold">Siamo chiusi</h6>
-                            <h6 id="giorniChiusura">Giovedì<br>Domenica</h6>
-                        </div>
+                        <a href="iniziative.html">Vedi tutto</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <img class="large-screen-separator" id="separator" src="home/separator.jpg">
+        <img class="large-screen-separator" src="home/separator.jpg" data-aos="zoom-in" data-aos-duration="2600">
 
-        <div class="horizontal-stack" style="margin: 15px;">
-            <div class="shadow" style="overflow: hidden;">
-                <div class="vertical-stack">
-                    <h1>Galleria</h1>
-                    <div id="carousel" class="carousel">
-
-                    </div>
-                    <div class="controls-section" style="margin: 10px;">
-                        <img id="prev-arrow" class="control-images" src="carousel/chevron-left.png" alt="indietro">
-                        <img id="next-arrow" class="control-images" src="carousel/chevron-right.png" alt="avanti">
-                        <img id="play" class="control-images" src="carousel/play.png" alt="play">
+        <div class="horizontal-stack" style="margin: 15px; width: calc(100%-30px);">
+            <div class="container" style="margin: 15px" data-aos="fade-up" data-aos-duration="2000"
+                data-aos-delay="1300">
+                <div class="border-top"></div>
+                <div class="border-right"></div>
+                <div class="border-bottom"></div>
+                <div class="border-left"></div>
+                <div id="timetable" class="shadow large-screen" style=" width: 100%;">
+                    <div class="vertical-stack" style="width: 100%;">
+                        <h1 style="margin: 15px;">I nostri orari</h1>
+                        <div class="horizontal-stack" style="justify-content: space-evenly;">
+                            <div class="vertical-stack" style="justify-content: space-between;" style="padding: 15px;">
+                                <h6 class="bold">Mattino</h6>
+                                <h6 id="mattino">Dalle 9<br>alle 12</h6>
+                            </div>
+                            <div class="vertical-stack" style="justify-content: space-between;" style="margin: 15px;">
+                                <h6 class="bold">Pomeriggio</h6>
+                                <h6 id="pomeriggio">Dalle 15<br>alle 18</h6>
+                            </div>
+                            <div class="vertical-stack" style="justify-content: space-between;" style="margin: 15px;">
+                                <h6 class="bold">Siamo chiusi</h6>
+                                <h6 id="giorniChiusura">Giovedì<br>Domenica</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <img class="large-screen-separator" src="home/separator.jpg">
+        <img class="large-screen-separator" id="separator" src="home/separator.jpg" data-aos="zoom-in"
+            data-aos-duration="2600">
+
+        <div class="horizontal-stack">
+            <div class="container" style="margin: 15px" data-aos="fade-up" data-aos-duration="2000"
+                data-aos-delay="1300">
+                <div class="border-top"></div>
+                <div class="border-right"></div>
+                <div class="border-bottom"></div>
+                <div class="border-left"></div>
+                <div class="shadow" style="overflow: hidden; margin: 4px;">
+                    <div class="vertical-stack">
+                        <h1>Galleria</h1>
+                        <div id="carousel" class="carousel">
+
+                        </div>
+                        <div class="controls-section" style="margin: 10px;">
+                            <img id="prev-arrow" class="control-images" src="carousel/chevron-left.png" alt="indietro">
+                            <img id="next-arrow" class="control-images" src="carousel/chevron-right.png" alt="avanti">
+                            <img id="play" class="control-images" src="carousel/play.png" alt="play">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img class="large-screen-separator" src="home/separator.jpg" data-aos="zoom-in" data-aos-duration="2600">
 
         <div style="flex-direction: column; padding-bottom: 40px; padding-top: 20px; margin: 15px;">
             <h1>Dove ci puoi trovare?</h1>
@@ -784,7 +839,7 @@
                 <h1>${sectionData.title}</h1>
                 <img class="card-img" id="logo" src="${sectionData.image}">
                 <p style="margin: 5px;">${sectionData.description}</p>
-                ${sectionData.link !== null ? `<a href="${sectionData.link}" style = "padding-bottom:15px">Scopri di più</a>` : ''}
+                ${sectionData.link !== null ? `<a href="${sectionData.link}">Scopri di più</a>` : ''}
             </section>
             </div>
         `;
@@ -807,7 +862,7 @@
                 <h1>${sectionData.title}</h1>
                 <img class="card-img" id="logo" src="${sectionData.image}">
                 <p style="margin: 5px;">${sectionData.description}</p>
-                ${sectionData.link !== null ? `<a href="${sectionData.link}" style = "padding-bottom:15px" >Scopri di più</a>` : ''}
+                ${sectionData.link !== null ? `<a href="${sectionData.link}">Scopri di più</a>` : ''}
             </section>
             </div>
         `;
@@ -959,7 +1014,7 @@
                                         elements[2][k].style.animation = 'wrapBorderLeft 2s forwards';
                                         elements[3][k].style.animation = 'wrapBorderBottom 2s forwards';
                                         elements[3][k].style.animationDelay = '2s';
-                                    }, 1200);
+                                    }, 2100);
                                 }
                             } else {
                                 var k = -1;
@@ -1080,11 +1135,23 @@
             const iniziativa = esperienze[index];
             container.style.opacity = 0;
 
+            const keyframes = [
+                { boxShadow: '0px 0px 0px rgba(0, 0, 0, 0.0)'},
+                { boxShadow: '5px 10px 25px rgba(0, 0, 0, 0.9)'}
+            ];
+
+            const options = {
+                duration: 3000, // 3 seconds
+                delay: 0,    // 1 second delay
+                fill: 'forwards' 
+            };
+
             setTimeout(function () {
                 imageElement.onload = function () {
                     titleElement.textContent = iniziativa.titolo;
                     descriptionElement.textContent = iniziativa.descrizione;
                     container.style.opacity = 1;
+                    immagineIniziativa.animate(keyframes, options);
                 }
                 imageElement.src = iniziativa.immagine;
                 currentExp = (index + 1) % esperienze.length;
