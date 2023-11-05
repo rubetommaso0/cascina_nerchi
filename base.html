@@ -512,17 +512,16 @@
 
     <div class="vertical-stack">
 
-        <img class="large-screen-separator" src="home/separator.jpg" data-aos="zoom-in" data-aos-duration="2600">
+        <img class="large-screen-separator" src="home/separator.jpg">
 
         <div id="dynamicSections">
 
         </div>
 
-        <img class="large-screen-separator" src="home/separator.jpg" data-aos="zoom-in" data-aos-duration="2600">
+        <img class="large-screen-separator" src="home/separator.jpg">
 
         <div class="horizontal-stack" style="margin: 15px;">
-            <div class="container" style="margin: 15px" data-aos="fade-up" data-aos-duration="2000"
-                data-aos-delay="1300">
+            <div class="container" style="margin: 15px">
                 <div class="border-top"></div>
                 <div class="border-right"></div>
                 <div class="border-bottom"></div>
@@ -541,11 +540,10 @@
             </div>
         </div>
 
-        <img class="large-screen-separator" src="home/separator.jpg" data-aos="zoom-in" data-aos-duration="2600">
+        <img class="large-screen-separator" src="home/separator.jpg">
 
         <div class="horizontal-stack" style="margin: 15px; width: calc(100%-30px);">
-            <div class="container" style="margin: 15px" data-aos="fade-up" data-aos-duration="2000"
-                data-aos-delay="1300">
+            <div class="container" style="margin: 15px">
                 <div class="border-top"></div>
                 <div class="border-right"></div>
                 <div class="border-bottom"></div>
@@ -572,12 +570,10 @@
             </div>
         </div>
 
-        <img class="large-screen-separator" id="separator" src="home/separator.jpg" data-aos="zoom-in"
-            data-aos-duration="2600">
+        <img class="large-screen-separator" id="separator" src="home/separator.jpg">
 
         <div class="horizontal-stack">
-            <div class="container" style="margin: 15px" data-aos="fade-up" data-aos-duration="2000"
-                data-aos-delay="1300">
+            <div class="container" style="margin: 15px">
                 <div class="border-top"></div>
                 <div class="border-right"></div>
                 <div class="border-bottom"></div>
@@ -598,7 +594,7 @@
             </div>
         </div>
 
-        <img class="large-screen-separator" src="home/separator.jpg" data-aos="zoom-in" data-aos-duration="2600">
+        <img class="large-screen-separator" src="home/separator.jpg">
 
         <div style="flex-direction: column; padding-bottom: 40px; padding-top: 20px; margin: 15px;">
             <h1>Dove ci puoi trovare?</h1>
@@ -809,7 +805,7 @@
                             currentSection.classList.add('horizontal-stack');
                             console.log("a" + ind);
                             currentSection.innerHTML = `
-  <div class="container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+  <div class="container">
     <div class="border-top"></div>
     <div class="border-right"></div>
     <div class="border-bottom"></div>
@@ -830,7 +826,7 @@
                             currentSection.classList.add('horizontal-stack');
                             console.log("b" + ind);
                             currentSectionData = currentSectionData + `
-                            <div class="container" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="500">
+                            <div class="container">
     <div class="border-top"></div>
     <div class="border-right"></div>
     <div class="border-bottom"></div>
@@ -853,7 +849,7 @@
                         } else {
                             console.log("c" + ind + ind % 2);
                             currentSectionData = currentSectionData + `
-                            <div class="container" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="500">
+                            <div class="container">
     <div class="border-top"></div>
     <div class="border-right"></div>
     <div class="border-bottom"></div>
@@ -995,10 +991,32 @@
                     elements[2] = Array.from(document.querySelectorAll('.border-left'));
                     elements[3] = Array.from(document.querySelectorAll('.border-bottom'));
 
+                    const keyframes = [
+                        {
+                            boxShadow: '0px 0px 0px rgba(0, 0, 0, 0.0)',
+                            opacity: 0,
+                            transform: 'translateY(50px)',
+                            easing: 'ease-out'
+                        },
+                        {
+                            boxShadow: '15px 15px 20px rgba(0, 0, 0, 0.5)',
+                            opacity: 1,
+                            transform: 'translateY(0)',
+                            easing: 'ease-out'
+                        }
+                    ];
+
+                    const options = {
+                        duration: 2000, // 2 seconds
+                        delay: 500,    // 0.5 second delay
+                        fill: 'both'
+                    };
+
                     // Define a callback function to handle intersections
                     function handleIntersection(entries, observer) {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
+                                entry.target.animate(keyframes, options);
                                 var k = -1;
                                 for (i = 0; i < containers.length + 1; i++) {
                                     if (entry.target === containers[i]) {
@@ -1014,9 +1032,10 @@
                                         elements[2][k].style.animation = 'wrapBorderLeft 2s forwards';
                                         elements[3][k].style.animation = 'wrapBorderBottom 2s forwards';
                                         elements[3][k].style.animationDelay = '2s';
-                                    }, 2100);
+                                    }, 2700);
                                 }
                             } else {
+                                entry.target.style = "boxShadow: '0px 0px 0px rgba(0, 0, 0, 0.0)', opacity: 0, transform: 'translateY(50px)'"
                                 var k = -1;
                                 console.log(k);
                                 for (i = 0; i < containers.length + 1; i++) {
@@ -1026,14 +1045,14 @@
                                     }
                                 }
                                 if (k != -1) {
-                                    elements[0][k].offsetHeight;
-                                    elements[1][k].offsetHeight;
-                                    elements[2][k].offsetHeight;
-                                    elements[3][k].offsetHeight;
                                     elements[0][k].style.animation = 'none';
                                     elements[1][k].style.animation = 'none';
                                     elements[2][k].style.animation = 'none';
                                     elements[3][k].style.animation = 'none';
+                                    elements[0][k].offsetHeight;
+                                    elements[1][k].offsetHeight;
+                                    elements[2][k].offsetHeight;
+                                    elements[3][k].offsetHeight;
                                 }
                             }
                         });
@@ -1136,14 +1155,14 @@
             container.style.opacity = 0;
 
             const keyframes = [
-                { boxShadow: '0px 0px 0px rgba(0, 0, 0, 0.0)'},
-                { boxShadow: '5px 10px 25px rgba(0, 0, 0, 0.9)'}
+                { boxShadow: '0px 0px 0px rgba(0, 0, 0, 0.0)' },
+                { boxShadow: '5px 10px 25px rgba(0, 0, 0, 0.9)' }
             ];
 
             const options = {
                 duration: 3000, // 3 seconds
                 delay: 0,    // 1 second delay
-                fill: 'forwards' 
+                fill: 'forwards'
             };
 
             setTimeout(function () {
